@@ -1,0 +1,13 @@
+Parameters:
+  BucketName:
+    Type: String
+
+Resources:
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+
+#Replacement. No deletion for the previous resource, so you have to manually delete when you apply this.
